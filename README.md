@@ -1,7 +1,7 @@
 # Calculadora trabalhista
 
 [![Testes](https://github.com/LeonardoCarrilho/calculadora-trabalhista/actions/workflows/ci.yml/badge.svg)](https://github.com/LeonardoCarrilho/calculadora-trabalhista/actions/workflows/ci.yml)
-[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-1f6b4d.svg)](LICENSE)
+[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-0f5c4a.svg)](LICENSE)
 
 Simulador de salário líquido CLT feito com **HTML, CSS e JavaScript puro** — sem
 framework, sem build e sem back-end. Informe o salário bruto e veja INSS, IRRF,
@@ -10,6 +10,13 @@ FGTS, custo do empregador, 13º salário e férias, com memória de cálculo.
 **Demo:** https://leonardocarrilho.github.io/calculadora-trabalhista/
 
 ![Prévia da calculadora](docs/preview.png)
+
+## Identidade visual
+
+A interface foi desenhada como um **contracheque**: papel pautado, faixas de
+verde-petróleo, tipografia serifada nos títulos e monoespaçada nos valores, com
+linhas pontilhadas, selo de conferência e o resultado em formato de recibo. Tudo
+em CSS puro, sem imagens de apoio.
 
 ## Por que este projeto existe
 
@@ -29,7 +36,7 @@ em uma ferramenta de cálculo aberta, testada e explicável.
 - **Férias** com terço constitucional e abono pecuniário isento.
 - **Histórico local** das últimas cinco simulações (localStorage).
 - **Copiar resumo** e **imprimir** somente o resultado.
-- Tema claro/escuro automático, layout responsivo e navegação por teclado.
+- Layout responsivo, foco visível e navegação por teclado.
 
 ## Rodar localmente
 
@@ -63,7 +70,7 @@ proporcional, férias com e sem abono e arredondamentos.
 ```
 .
 ├── index.html            # interface semântica e acessível
-├── styles.css            # tema claro/escuro, responsivo e estilos de impressão
+├── styles.css            # identidade de contracheque, responsivo e impressão
 ├── src/
 │   ├── calc.js           # regras de cálculo puras (centavos, sem DOM)
 │   └── app.js            # formulário, máscara de moeda, resultados e histórico
@@ -104,8 +111,8 @@ convenção coletiva ou orientação contábil.
 
 ## Stack
 
-HTML5 semântico · CSS moderno (variáveis, grid, `prefers-color-scheme`,
-`prefers-reduced-motion`) · JavaScript ES Modules · `node:test`.
+HTML5 semântico · CSS moderno (variáveis, grid, tipografia serifada e
+monoespaçada, `prefers-reduced-motion`) · JavaScript ES Modules · `node:test`.
 
 ## Licença
 
