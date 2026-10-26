@@ -1,0 +1,25 @@
+{
+  "name": "calculadora-trabalhista",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simulador de salário líquido, 13º e férias em HTML, CSS e JavaScript puro",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "folha-de-pagamento",
+    "inss",
+    "irrf"
+  ],
+  "author": "Leonardo Fernandes Carrilho",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
