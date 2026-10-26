@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora trabalhista — salário líquido, 13º e férias</title>
+    <meta
+      name="description"
+      content="Simulador de salário líquido CLT com INSS progressivo, IRRF, FGTS, 13º salário e férias. Sem cadastro, cálculo feito no navegador."
+    />
+    <meta name="theme-color" content="#f4f1e8" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./" aria-label="Calculadora trabalhista — início">
+          <span class="brand-mark" aria-hidden="true">R$</span>
+          <span class="brand-text">
+            <strong>Calculadora trabalhista</strong>
+            <small>salário líquido, 13º e férias</small>
+          </span>
+        </a>
+
+        <div class="header-meta">
+          <span class="badge" data-ano-tabela>tabelas 2025</span>
+          <a class="header-link" href="#como-funciona">Como funciona</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero wrap">
+        <p class="eyebrow">Simulador CLT</p>
+        <h1>Quanto sobra, de verdade, do seu salário?</h1>
+        <p class="hero-lead">
+          Informe o salário bruto e veja os descontos de INSS e IRRF faixa por
+          faixa, o FGTS depositado, o custo para a empresa e os valores de 13º e
+          férias. Tudo é calculado no seu navegador — nada é enviado para
+          servidores.
+        </p>
+
+        <ul class="hero-facts" aria-label="Destaques do simulador">
+          <li><strong>INSS progressivo</strong><span>4 faixas, com teto</span></li>
+          <li><strong>IRRF automático</strong><span>legal x simplificado</span></li>
+          <li><strong>13º e férias</strong><span>com terço e abono</span></li>
+          <li><strong>100% local</strong><span>sem cadastro</span></li>
+        </ul>
+      </section>
+
+      <section class="wrap grid" aria-labelledby="titulo-simulador">
+        <h2 id="titulo-simulador" class="sr-only">Simulador de salário líquido</h2>
+
+        <form id="form-folha" class="card form-card" novalidate>
+          <div class="card-head">
+            <h3>Dados do mês</h3>
+            <p>Valores em reais. O cálculo é atualizado enquanto você digita.</p>
+          </div>
+
+          <div class="field">
+            <label for="salario">Salário bruto</label>
+            <div class="money-input">
+              <span aria-hidden="true">R$</span>
+              <input
+                id="salario"
+                name="salario"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                value="3.500,00"
+                aria-describedby="salario-ajuda"
+              />
+            </div>
+            <small id="salario-ajuda">Salário contratual, sem benefícios.</small>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="dependentes">Dependentes</label>
+              <input
+                id="dependentes"
+                name="dependentes"
+                type="number"
+                min="0"
+                max="20"
+                step="1"
+                value="0"
+                inputmode="numeric"
+              />
+              <small>Para a dedução do IRRF.</small>
+            </div>
+
+            <div class="field">
+              <label for="pensao">Pensão alimentícia</label>
+              <div class="suffix-input">
+                <input
+                  id="pensao"
+                  name="pensao"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="0"
+                  inputmode="decimal"
+                />
+                <span aria-hidden="true">%</span>
+              </div>
+              <small>Percentual sobre o salário bruto.</small>
+            </div>
+          </div>
+
+          <fieldset class="field checks">
+            <legend>Outros descontos</legend>
+            <label class="check">
+              <input id="vt" name="vt" type="checkbox" />
+              <span>
+                Vale-transporte
+                <small>desconto de até 6% do bruto</small>
+              </span>
+            </label>
+
+            <div class="field inline-money">
+              <label for="outros">Outros descontos</label>
+              <div class="money-input compact">
+                <span aria-hidden="true">R$</span>
+                <input
+                  id="outros"
+                  name="outros"
+                  type="text"
+                  inputmode="decimal"
+                  value="0,00"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Calcular</button>
+            <button class="btn btn-ghost" type="button" id="btn-limpar">
+              Limpar
+            </button>
+          </div>
+
+          <p class="disclaimer">
+            Simulação educativa. Não substitui o holerite oficial nem orientação
+            contábil.
+          </p>
+        </form>
+
+        <div class="results" aria-labelledby="titulo-resultado">
+          <section class="card result-card" aria-live="polite">
+            <div class="card-head result-head">
+              <div>
+                <h3 id="titulo-resultado">Seu líquido no mês</h3>
+                <p id="res-regime">—</p>
+              </div>
+              <span class="pill" id="res-percentual">0% de desconto</span>
+            </div>
+
+            <p class="big-value" id="res-liquido">R$ 0,00</p>
+
+            <dl class="result-list">
+              <div>
+                <dt>Salário bruto</dt>
+                <dd id="res-bruto">R$ 0,00</dd>
+              </div>
+              <div class="negative">
+                <dt>INSS <span id="res-inss-aliquota" class="muted"></span></dt>
+                <dd id="res-inss">R$ 0,00</dd>
+              </div>
+              <div class="negative">
+                <dt>IRRF <span id="res-irrf-aliquota" class="muted"></span></dt>
+                <dd id="res-irrf">R$ 0,00</dd>
+              </div>
+              <div class="negative" id="linha-pensao" hidden>
+                <dt>Pensão alimentícia</dt>
+                <dd id="res-pensao">R$ 0,00</dd>
+              </div>
+              <div class="negative" id="linha-vt" hidden>
+                <dt>Vale-transporte</dt>
+                <dd id="res-vt">R$ 0,00</dd>
+              </div>
+              <div class="negative" id="linha-outros" hidden>
+                <dt>Outros descontos</dt>
+                <dd id="res-outros">R$ 0,00</dd>
+              </div>
+              <div class="total">
+                <dt>Total de descontos</dt>
+                <dd id="res-descontos">R$ 0,00</dd>
+              </div>
+            </dl>
+
+            <div class="aside-values">
+              <div>
+                <span>FGTS do mês</span>
+                <strong id="res-fgts">R$ 0,00</strong>
+              </div>
+              <div>
+                <span>Custo estimado para a empresa</span>
+                <strong id="res-custo">R$ 0,00</strong>
+              </div>
+            </div>
+
+            <p class="notice" id="aviso-teto" hidden>
+              O salário informado ultrapassa o teto do INSS: a contribuição fica
+              limitada ao valor máximo.
+            </p>
+
+            <div class="result-actions">
+              <button class="btn btn-small" type="button" id="btn-copiar">
+                Copiar resumo
+              </button>
+              <button class="btn btn-small btn-ghost" type="button" id="btn-imprimir">
+                Imprimir
+              </button>
+            </div>
+          </section>
+
+          <details class="card memory">
+            <summary>Memória de cálculo do INSS</summary>
+            <div class="table-wrap">
+              <table>
+                <caption class="sr-only">
+                  Faixas do INSS aplicadas ao salário informado
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Faixa até</th>
+                    <th scope="col">Alíquota</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Contribuição</th>
+                  </tr>
+                </thead>
+                <tbody id="memoria-inss">
+                  <tr>
+                    <td colspan="4" class="empty">Informe um salário para ver o detalhe.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <dl class="memory-grid">
+              <div>
+                <dt>Base do IRRF (legal)</dt>
+                <dd id="memoria-base-legal">R$ 0,00</dd>
+              </div>
+              <div>
+                <dt>Base do IRRF (simplificada)</dt>
+                <dd id="memoria-base-simplificada">R$ 0,00</dd>
+              </div>
+              <div>
+                <dt>Dedução por dependentes</dt>
+                <dd id="memoria-dependentes">R$ 0,00</dd>
+              </div>
+            </dl>
+          </details>
+        </div>
+      </section>
+
+      <section class="wrap extras" aria-labelledby="titulo-extras">
+        <div class="section-head">
+          <h2 id="titulo-extras">Outros direitos</h2>
+          <p>
+            O 13º e as férias têm tributação própria. Simule os dois cenários
+            abaixo.
+          </p>
+        </div>
+
+        <div class="extras-grid">
+          <form id="form-decimo" class="card compact-card">
+            <h3>13º salário</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="salario-13">Salário bruto</label>
+                <div class="money-input compact">
+                  <span aria-hidden="true">R$</span>
+                  <input
+                    id="salario-13"
+                    type="text"
+                    inputmode="decimal"
+                    value="3.500,00"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="meses-13">Meses trabalhados</label>
+                <input
+                  id="meses-13"
+                  type="number"
+                  min="1"
+                  max="12"
+                  step="1"
+                  value="12"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+
+            <dl class="mini-results">
+              <div><dt>Bruto</dt><dd id="res-13-bruto">R$ 0,00</dd></div>
+              <div><dt>INSS</dt><dd id="res-13-inss">R$ 0,00</dd></div>
+              <div><dt>IRRF</dt><dd id="res-13-irrf">R$ 0,00</dd></div>
+              <div class="highlight"><dt>Líquido</dt><dd id="res-13-liquido">R$ 0,00</dd></div>
+            </dl>
+            <p class="fine-print">FGTS: <span id="res-13-fgts">R$ 0,00</span></p>
+          </form>
+
+          <form id="form-ferias" class="card compact-card">
+            <h3>Férias</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="salario-ferias">Salário bruto</label>
+                <div class="money-input compact">
+                  <span aria-hidden="true">R$</span>
+                  <input
+                    id="salario-ferias"
+                    type="text"
+                    inputmode="decimal"
+                    value="3.500,00"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="dias-abono">Dias vendidos</label>
+                <input
+                  id="dias-abono"
+                  type="number"
+                  min="0"
+                  max="10"
+                  step="5"
+                  value="0"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+
+            <dl class="mini-results">
+              <div><dt>Férias + 1/3</dt><dd id="res-ferias-base">R$ 0,00</dd></div>
+              <div><dt>Abono</dt><dd id="res-ferias-abono">R$ 0,00</dd></div>
+              <div><dt>Descontos</dt><dd id="res-ferias-descontos">R$ 0,00</dd></div>
+              <div class="highlight"><dt>Líquido</dt><dd id="res-ferias-liquido">R$ 0,00</dd></div>
+            </dl>
+            <p class="fine-print">
+              O abono de até 10 dias é isento de INSS e IRRF.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <section class="wrap history-section" aria-labelledby="titulo-historico">
+        <div class="section-head inline">
+          <div>
+            <h2 id="titulo-historico">Últimas simulações</h2>
+            <p>Ficam salvas apenas neste navegador.</p>
+          </div>
+          <button class="btn btn-small btn-ghost" type="button" id="btn-limpar-historico">
+            Limpar histórico
+          </button>
+        </div>
+
+        <div class="card history-card">
+          <p class="empty" id="historico-vazio">
+            Nenhuma simulação salva ainda. Calcule um salário para começar.
+          </p>
+          <ul class="history-list" id="historico"></ul>
+        </div>
+      </section>
+
+      <section class="wrap about" id="como-funciona" aria-labelledby="titulo-como">
+        <h2 id="titulo-como">Como o cálculo funciona</h2>
+
+        <div class="about-grid">
+          <article>
+            <h3>INSS progressivo</h3>
+            <p>
+              Cada faixa salarial tem a sua alíquota, aplicada somente sobre a
+              parcela do salário que cai naquela faixa. Quem ganha acima do teto
+              contribui com o valor máximo.
+            </p>
+          </article>
+          <article>
+            <h3>IRRF por faixa</h3>
+            <p>
+              O imposto é calculado sobre o salário menos INSS, dependentes e
+              pensão. O simulador compara esse modelo com o desconto
+              simplificado e usa o mais vantajoso.
+            </p>
+          </article>
+          <article>
+            <h3>FGTS e provisões</h3>
+            <p>
+              O FGTS (8%) não é descontado do trabalhador: é um depósito da
+              empresa. O custo estimado soma FGTS e provisões de 13º e férias.
+            </p>
+          </article>
+          <article>
+            <h3>Tabelas de referência</h3>
+            <p>
+              As faixas usadas são as de <span data-ano-tabela>2025</span>, em
+              <code>src/calc.js</code>. Quando a Receita publicar novos valores,
+              basta atualizar as constantes e os testes.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>
+          Feito por
+          <a href="https://github.com/LeonardoCarrilho" rel="noopener">
+            Leonardo Carrilho
+          </a>
+          · HTML, CSS e JavaScript puro, sem dependências.
+        </p>
+        <p class="muted">
+          Valores aproximados, sem arredondamentos oficiais de folha.
+        </p>
+      </div>
+    </footer>
+
+    <p class="sr-only" id="anuncio" role="status" aria-live="polite"></p>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
