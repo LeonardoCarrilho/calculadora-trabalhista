@@ -1185,16 +1185,28 @@ code {
   }
 }
 
+/* Identidade visual e layouts responsivos. */
 
-/* Folha de cálculo: identificação e resultado com leitura de documento. */
-.hero { border-bottom: 3px double var(--rule-strong); margin-bottom: 2rem; }
-.hero h1 { font-weight: 400; }
-.form-card { border-top: 5px solid var(--petrol); }
-.result-head h2 { font-family: var(--font-mono); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.big-value { font-size: clamp(2rem, 4vw, 3.2rem); overflow-wrap: anywhere; }
-.memory { box-shadow: none; }
-@media print {
- .hero, .memory { display: none; }
- .grid, .results { display: block; }
- .result-card { box-shadow: none; break-inside: avoid; }
-}
+:root { --bg:#eef2f8; --paper:#fff; --paper-2:#f4f7fc; --paper-3:#e8eef8; --ink:#192b49; --ink-soft:#485b76; --ink-faint:#61718a; --rule:#d7e0ee; --rule-strong:#adbed8; --petrol:#275cac; --petrol-deep:#1c4686; --petrol-soft:#e5edfa; --radius:16px; --radius-sm:10px; --font-display:'Public Sans','Segoe UI',sans-serif; }
+body { background:var(--bg); }
+.site-header { background:#fff; }
+.hero { padding-top:36px; padding-bottom:28px; }
+.hero h1 { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; letter-spacing:-.055em; max-width:24ch; }
+.hero-lead { max-width:72ch; font-size:1rem; }
+.hero-seal { display:none; }
+.hero-facts { gap:14px; border:0; margin-top:26px; }
+.hero-facts li { background:#fff; padding:16px 20px; border:1px solid var(--rule); border-radius:12px; }
+.card { border-radius:16px; box-shadow:0 8px 24px #192b4905; }
+.form-card { border-top:4px solid #275cac; }
+.result-card { border-top:4px solid #192b49; background:#fff; color:var(--ink); }
+.result-head { color:var(--ink); }
+.big-value { color:#275cac; letter-spacing:-.06em; font-family:var(--font-display); padding-block:12px; }
+.result-list { border-block:1px dashed var(--rule-strong); }
+.aside-values { background:var(--paper-2); border-radius:10px; padding:16px; }
+.btn { border-radius:8px; }
+.money-input { border-radius:10px; }
+.section-head h2 { letter-spacing:-.04em; }
+@media(max-width:600px) { .hero-facts { grid-template-columns:1fr 1fr; } .hero-facts li { padding:12px; } }
+@media print { body { background:#fff; } .card { box-shadow:none; } }
+
+.hero-facts li::before,.result-card::before { display:none; }
