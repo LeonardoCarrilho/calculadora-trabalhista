@@ -1184,3 +1184,17 @@ code {
     position: static;
   }
 }
+
+
+/* Folha de cálculo: identificação e resultado com leitura de documento. */
+.hero { border-bottom: 3px double var(--rule-strong); margin-bottom: 2rem; }
+.hero h1 { font-weight: 400; }
+.form-card { border-top: 5px solid var(--petrol); }
+.result-head h2 { font-family: var(--font-mono); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.big-value { font-size: clamp(2rem, 4vw, 3.2rem); overflow-wrap: anywhere; }
+.memory { box-shadow: none; }
+@media print {
+ .hero, .memory { display: none; }
+ .grid, .results { display: block; }
+ .result-card { box-shadow: none; break-inside: avoid; }
+}
