@@ -1185,28 +1185,75 @@ code {
   }
 }
 
-/* Identidade visual e layouts responsivos. */
-
-:root { --bg:#eef2f8; --paper:#fff; --paper-2:#f4f7fc; --paper-3:#e8eef8; --ink:#192b49; --ink-soft:#485b76; --ink-faint:#61718a; --rule:#d7e0ee; --rule-strong:#adbed8; --petrol:#275cac; --petrol-deep:#1c4686; --petrol-soft:#e5edfa; --radius:16px; --radius-sm:10px; --font-display:'Public Sans','Segoe UI',sans-serif; }
+/* Visual refinement and responsive layouts. */
+:root { --bg:#f4f6f0; --paper:#fff; --paper-2:#f0f5ed; --paper-3:#e1eadc; --ink:#213c31; --ink-soft:#4e6558; --ink-faint:#627769; --rule:#d8e3d2; --rule-strong:#a9bca2; --petrol:#256443; --petrol-deep:#194b30; --petrol-soft:#e6f1df; --radius:20px; --radius-sm:12px; --font-display:"Public Sans","Segoe UI",sans-serif; --focus-ring:#256443; }
 body { background:var(--bg); }
-.site-header { background:#fff; }
-.hero { padding-top:36px; padding-bottom:28px; }
-.hero h1 { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; letter-spacing:-.055em; max-width:24ch; }
-.hero-lead { max-width:72ch; font-size:1rem; }
+.wrap { width:min(1160px,calc(100% - 48px)); }
+.site-header { background:#fff; border-top:0; border-bottom:1px solid var(--rule); }
+.header-inner { min-height:84px; }
+.brand-mark { border-radius:12px; background:var(--petrol); }
+.hero { padding:44px 0 32px; }
+.hero h1 { max-width:22ch; font-size:clamp(2.1rem,4.2vw,3.8rem); font-weight:700; line-height:1.1; letter-spacing:-.045em; text-wrap:balance; }
+.hero-lead { max-width:70ch; font-size:1rem; line-height:1.8; margin-top:20px; }
+.eyebrow { color:var(--petrol); font-size:.72rem; letter-spacing:.12em; }
 .hero-seal { display:none; }
-.hero-facts { gap:14px; border:0; margin-top:26px; }
-.hero-facts li { background:#fff; padding:16px 20px; border:1px solid var(--rule); border-radius:12px; }
-.card { border-radius:16px; box-shadow:0 8px 24px #192b4905; }
-.form-card { border-top:4px solid #275cac; }
-.result-card { border-top:4px solid #192b49; background:#fff; color:var(--ink); }
-.result-head { color:var(--ink); }
-.big-value { color:#275cac; letter-spacing:-.06em; font-family:var(--font-display); padding-block:12px; }
-.result-list { border-block:1px dashed var(--rule-strong); }
-.aside-values { background:var(--paper-2); border-radius:10px; padding:16px; }
-.btn { border-radius:8px; }
-.money-input { border-radius:10px; }
-.section-head h2 { letter-spacing:-.04em; }
-@media(max-width:600px) { .hero-facts { grid-template-columns:1fr 1fr; } .hero-facts li { padding:12px; } }
-@media print { body { background:#fff; } .card { box-shadow:none; } }
-
+.hero-facts { gap:0; padding:22px 0 0; border:0; margin:24px 0 0; }
+.hero-facts li { padding:8px 24px; border:0; border-left:1px solid var(--rule-strong); background:transparent; }
+.hero-facts li:first-child { border:0; padding-left:0; }
 .hero-facts li::before,.result-card::before { display:none; }
+.hero-facts strong { font-family:var(--font-body); font-size:.82rem; }
+.hero-facts span { font-size:.7rem; }
+.grid { gap:24px; border-top:0; padding-top:12px; align-items:start; }
+.card { border:1px solid var(--rule); border-radius:20px; box-shadow:0 8px 24px #213c3105; }
+.form-card { border-top:1px solid var(--rule); padding:28px; }
+.card-head { padding-bottom:20px; margin-bottom:24px; border-bottom:1px solid var(--rule); }
+.card-head h3 { font-size:1.25rem; }
+.field > label,.field legend { font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:.85rem; font-weight:600; }
+.money-input,.suffix-input { border:1px solid var(--rule-strong); border-radius:12px; background:#f7f9f5; min-height:50px; }
+.money-input:focus-within,.suffix-input:focus-within { border-color:var(--petrol); box-shadow:0 0 0 3px #25644314; }
+.result-card { background:#fff; color:var(--ink); border-top:5px solid var(--petrol); padding:28px; }
+.result-head { color:var(--ink); gap:12px; flex-wrap:wrap; }
+.big-value { color:var(--petrol); font-family:var(--font-display); font-size:clamp(2.2rem,4.5vw,3.6rem); letter-spacing:-.055em; padding-block:18px; font-variant-numeric:tabular-nums; }
+.result-list { border-block:1px solid var(--rule); padding-block:12px; }
+.result-list > div { gap:16px; }
+.result-list dt::after { display:none; }
+.aside-values { background:var(--paper-2); padding:18px; border-radius:12px; }
+.btn { min-height:46px; border-radius:10px; font-family:var(--font-body); font-size:.85rem; letter-spacing:0; text-transform:none; }
+.btn-small { min-height:40px; }
+.section-head h2 { letter-spacing:-.035em; }
+.extras-grid { gap:24px; }
+.compact-card { padding:26px; }
+.about-grid article { background:white; padding:24px; border:1px solid var(--rule); border-radius:16px; }
+@media(min-width:1000px) { .results { position:sticky; top:24px; } }
+@media(max-width:760px) {
+ .wrap { width:calc(100% - 32px); }
+ .hero { padding-top:28px; }
+ .hero-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+ .hero-facts li,.hero-facts li:first-child { border:0; padding:0; }
+ .grid { grid-template-columns:minmax(0,1fr); }
+ .form-card,.result-card,.compact-card { padding:22px; }
+ .results { position:static; }
+ .header-inner { flex-wrap:wrap; padding-block:16px; gap:14px; }
+}
+@media(max-width:380px) {
+ .field-row,.extras-grid,.aside-values { grid-template-columns:minmax(0,1fr); }
+ .actions,.result-actions { flex-wrap:wrap; }
+ .actions .btn { flex:1; }
+ .form-card,.result-card { padding:18px; }
+ .brand-text strong { font-size:.87rem; }
+}
+@media print { body { background:white; } .results { position:static; } .card { box-shadow:none; } }
+
+/* Layout resilience and accessible interaction. */
+html { scroll-padding-top: 100px; }
+img { max-width: 100%; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, input, select, textarea { touch-action: manipulation; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--focus-ring, #2563eb); outline-offset: 4px; }
+input, select, textarea { max-width: 100%; }
+@media (max-width: 600px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), :is(select, textarea):not([hidden]):not([disabled]) { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

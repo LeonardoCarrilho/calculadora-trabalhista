@@ -1,0 +1,39 @@
+/* Payroll worksheet: ruled paper and a receipt-style result. */
+:root { --bg:#ebece5; --paper:#fffcf4; --paper-2:#f1f0e6; --paper-3:#e1e5d8; --ink:#243d30; --ink-soft:#4f6254; --ink-faint:#657464; --rule:#bac4b1; --rule-strong:#84977a; --petrol:#2b593e; --petrol-deep:#1b3d29; --petrol-soft:#e2e9d9; --radius:0; --radius-sm:0; --focus-ring:#2b593e; }
+body { background:#ebece5; }
+.wrap { width:min(1140px,calc(100% - 64px)); }
+.site-header { background:#ebece5; border-block:1px solid #84977a; margin-top:14px; }
+.header-inner { min-height:70px; }
+.brand-mark { border:1px solid #2b593e; background:none; color:#2b593e; border-radius:0; font-family:Georgia,serif; }
+.badge { background:none; border-color:#84977a; border-radius:0; }
+.hero { padding:44px 0 28px; }
+.hero h1 { font-family:Georgia,serif; font-weight:400; max-width:19ch; font-size:clamp(2.6rem,5vw,4.8rem); letter-spacing:-.055em; line-height:1.03; }
+.hero-lead { font-size:.95rem; max-width:68ch; }
+.eyebrow { font-family:monospace; letter-spacing:.12em; font-size:.7rem; }
+.hero-facts { border-block:1px solid #84977a; padding-block:15px; margin-top:32px; }
+.hero-facts li { padding:0 20px; }
+.hero-facts strong { font-family:monospace; font-size:.7rem; }
+.grid { padding-top:0; gap:36px; grid-template-columns:minmax(0,1.05fr) minmax(0,.9fr); }
+.card { border:1px solid #bac4b1; border-radius:0; background:#fffcf4; box-shadow:none; }
+.form-card { border:0; background:transparent; padding:24px 0; }
+.card-head { border-bottom:2px solid #2b593e; }
+.card-head h3 { font-family:Georgia,serif; font-size:1.8rem; font-weight:400; }
+.field>label,.field legend { font-size:.73rem; font-family:monospace; }
+.money-input,.suffix-input { background:#fffcf4; border:0; border-bottom:1px solid #84977a; border-radius:0; }
+.money-input:focus-within,.suffix-input:focus-within { box-shadow:none; }
+.result-card { border:1px solid #84977a; border-top:6px solid #2b593e; background:#fffcf4; padding:30px 26px; box-shadow:6px 6px 0 #d5dccb; position:relative; }
+.result-head { padding-bottom:22px; border-bottom:1px dashed #84977a; }
+.result-head h3 { font-family:monospace; font-size:.85rem; text-transform:uppercase; }
+.big-value { font-family:"Cascadia Mono",Consolas,monospace; font-size:clamp(2.1rem,3.5vw,3rem); font-weight:500; padding-block:26px; letter-spacing:-.07em; }
+.result-list { border-block:1px dashed #84977a; font-family:monospace; }
+.result-list>div { padding-block:10px; }
+.aside-values { border:0; border-bottom:1px dashed #84977a; background:none; border-radius:0; padding:18px 0; }
+.btn { border-radius:0; font-family:monospace; font-size:.78rem; text-transform:uppercase; letter-spacing:.03em; }
+.result-actions { gap:12px; }
+.section-head h2,.about h2 { font-family:Georgia,serif; font-weight:400; font-size:2.2rem; }
+.compact-card { border:0; border-top:2px solid #2b593e; padding:24px 0; background:none; }
+.history-card { border:0; border-block:1px solid #84977a; background:none; }
+.about-grid article { border:0; border-top:1px solid #84977a; border-radius:0; padding:20px 0; background:none; }
+.site-footer { border-top:1px solid #84977a; }
+@media(max-width:760px) { .wrap { width:calc(100% - 32px); } .grid { grid-template-columns:minmax(0,1fr); gap:16px; } .hero h1 { font-size:clamp(2.7rem,11vw,4rem); } .hero-facts { padding-block:18px; gap:20px; } .hero-facts li { padding:0; } .result-card { padding:24px 20px; margin-right:6px; } .form-card { padding-inline:0; } .site-header { margin-top:0; } }
+@media print { .result-card { box-shadow:none; } }
