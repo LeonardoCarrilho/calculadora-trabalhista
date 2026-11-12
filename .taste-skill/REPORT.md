@@ -33,4 +33,3 @@ A camada motion foi mantida sem editar o kit. Os momentos sorteados não foram a
 ## Verificação específica do checkbox
 
 O FAIL focus-visible de input#vt permaneceu no resultado automático. Verificação posterior por Tab real confirmou o foco na viewport e um anel no wrapper .check: sólido, 2px, rgb(13,116,128), sobre rgb(236,240,242), contraste calculado 4,785:1. Space alterou o estado do checkbox. O teste e2e/focus.spec.js passou (1 teste) e a [captura de foco](../docs/checkbox-focus.png) foi inspecionada. O checker mede apenas o input nativo e ignora o indicador do wrapper; classificamos este achado como falso positivo documentado, sem editar o resultado OPEN60 ou criar uma quarta rodada.
-
