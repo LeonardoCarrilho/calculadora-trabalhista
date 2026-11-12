@@ -74,3 +74,7 @@ h1,h2,h3 { font-weight:500; }
 .money-input input:focus-visible,.suffix-input input:focus-visible { background:var(--petrol-soft); }
 .check:focus-within { outline:2px solid var(--petrol); outline-offset:3px; }
 :focus-visible { scroll-margin-block:32px; }
+
+/* Keep keyboard focus immediate and its ring inside clipped field wrappers. */
+html:focus-within { scroll-behavior:auto; }
+.money-input input:focus-visible,.suffix-input input:focus-visible { outline-offset:-3px; background:var(--petrol); color:#fff; }

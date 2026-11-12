@@ -1,0 +1,1245 @@
+{
+  "gate": "GATE: OPEN 60 (rounds used up)",
+  "round": 3,
+  "history": [
+    {
+      "at": "2026-11-12T00:09:24.258Z",
+      "mode": "manual",
+      "status": "fail",
+      "fails": 71,
+      "round": 1,
+      "reused": false,
+      "stopHookActive": false
+    },
+    {
+      "at": "2026-11-12T00:42:42.237Z",
+      "mode": "manual",
+      "status": "fail",
+      "fails": 64,
+      "round": 2,
+      "reused": false,
+      "stopHookActive": false
+    },
+    {
+      "at": "2026-11-12T00:48:56.449Z",
+      "mode": "manual",
+      "status": "open",
+      "fails": 60,
+      "round": 3,
+      "reused": false,
+      "stopHookActive": false
+    }
+  ],
+  "waivers": [
+    {
+      "check": "gaming-suspect",
+      "target": "dist/assets/index-",
+      "reason": "The bundled code is the unchanged taste-skill motion.js shot() check for HeadlessChrome; its own documented screenshot behavior, not application checker detection."
+    },
+    {
+      "check": "motion-layer",
+      "target": "html[data-motion]",
+      "reason": "Vite bundles the unchanged taste-skill motion.css into the generated CSS asset. Source index.html imports it and the built CSS contains the motion layer."
+    },
+    {
+      "check": "nav",
+      "target": "header.site-header > div.wrap.header-inner > a.brand \"R$ Calculadora trabalhista SALÁRIO LÍQUI\"",
+      "reason": "The two lines belong to a single brand link: product name and subtitle. These are not wrapped navigation items, and the final screenshot shows both within the header."
+    }
+  ],
+  "openFails": [
+    {
+      "check": "gaming-suspect",
+      "where": "dist/assets/index-DLF0jwtm.js",
+      "msg": "the page's own script reads the user agent near \"headless\" or an automation tool's name",
+      "fix": "delete the user-agent test; a visitor and the checker get the same page",
+      "widths": [],
+      "ids": [
+        "gaming-suspect"
+      ],
+      "wheres": [
+        "dist/assets/index-DLF0jwtm.js"
+      ]
+    },
+    {
+      "check": "hero-fill",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido\"",
+      "msg": "the next section shows on the first screen: it starts at 552px on a 900px screen (the hero ends at 540px)",
+      "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "hero-fill"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.grid \"Simulador de salário líquido\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "form#form-decimo \"13º salário Salário bruto R$ Meses traba\"",
+      "msg": "its last line sits 0px above the lower edge of section.wrap.extras, where the ground changes to section.wrap.history-section",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "form#form-decimo \"13º salário Salário bruto R$ Meses traba\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "main#conteudo > section.wrap.history-section > div.card.history-card \"Nenhuma simulação salva ainda. Calcule u\"",
+      "msg": "its last line sits 0px above the lower edge of section.wrap.history-section, where the ground changes to section#como-funciona",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.history-section > div.card.history-card \"Nenhuma simulação salva ainda. Calcule u\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "section#como-funciona > div.about-grid > article:nth-of-type(3) > p \"O FGTS (8%) não é descontado do trabalha\"",
+      "msg": "its last line sits 3px above the rule on top of the footer",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "section#como-funciona > div.about-grid > article:nth-of-type(3) > p \"O FGTS (8%) não é descontado do trabalha\""
+      ]
+    },
+    {
+      "check": "nav",
+      "where": "header.site-header > div.wrap.header-inner > a.brand \"R$ Calculadora trabalhista SALÁRIO LÍQUI\"",
+      "msg": "nav link wraps to a second line",
+      "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "nav"
+      ],
+      "wheres": [
+        "header.site-header > div.wrap.header-inner > a.brand \"R$ Calculadora trabalhista SALÁRIO LÍQUI\""
+      ]
+    },
+    {
+      "check": "no-visual",
+      "where": "main#conteudo > section.hero.wrap \"Calculadora de salário para quem é CLT.\"",
+      "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+      "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "no-visual"
+      ],
+      "wheres": [
+        "main#conteudo > section.hero.wrap \"Calculadora de salário para quem é CLT.\""
+      ]
+    },
+    {
+      "check": "no-visual",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido\"",
+      "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+      "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "no-visual"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.grid \"Simulador de salário líquido\""
+      ]
+    },
+    {
+      "check": "no-visual",
+      "where": "main#conteudo > section.wrap.extras \"Outros direitos\"",
+      "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+      "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "no-visual"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.extras \"Outros direitos\""
+      ]
+    },
+    {
+      "check": "text-only",
+      "where": "section#como-funciona \"Como o cálculo funciona\"",
+      "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+      "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "text-only"
+      ],
+      "wheres": [
+        "section#como-funciona \"Como o cálculo funciona\""
+      ]
+    },
+    {
+      "check": "cta",
+      "where": "main#conteudo > section.hero.wrap",
+      "msg": "the hero has no button (the nav's does not count)",
+      "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "cta"
+      ],
+      "wheres": [
+        "main#conteudo > section.hero.wrap"
+      ]
+    },
+    {
+      "check": "cta",
+      "where": "form#form-decimo \"13º salário Salário bruto R$ Meses traba\"",
+      "msg": "1 priced card with no action in or under it",
+      "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "cta"
+      ],
+      "wheres": [
+        "form#form-decimo \"13º salário Salário bruto R$ Meses traba\""
+      ]
+    },
+    {
+      "check": "cta",
+      "where": "section#como-funciona \"Como o cálculo funciona\"",
+      "msg": "the last section before the footer ends with no button",
+      "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "cta"
+      ],
+      "wheres": [
+        "section#como-funciona \"Como o cálculo funciona\""
+      ]
+    },
+    {
+      "check": "copy-headings",
+      "where": "h2#titulo-extras \"Outros direitos\"",
+      "msg": "\"Outros direitos\" names no product, part, place or section (7 headings like it; at most one brand line per page) (and 6 more like it: \"Últimas simulações\", \"Como o cálculo funciona\", \"INSS progressivo\", \"IRRF por faixa\", ...)",
+      "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "copy-headings"
+      ],
+      "wheres": [
+        "h2#titulo-extras \"Outros direitos\""
+      ]
+    },
+    {
+      "check": "section-gaps",
+      "where": "section#como-funciona / footer.site-footer",
+      "msg": "101px between these sections, +71% against the median 59px",
+      "fix": "use one gap between sections (all within 25% of each other)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-gaps"
+      ],
+      "wheres": [
+        "section#como-funciona / footer.site-footer"
+      ]
+    },
+    {
+      "check": "motion-layer",
+      "where": "html[data-motion]",
+      "msg": "the page marks <html data-motion> but motion.css is not loaded: buttons, links, cards and photos answer nothing on hover",
+      "fix": "link assets/motion/motion.css after cards.css and keep data-motion on <html> (both, or neither)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "motion-layer"
+      ],
+      "wheres": [
+        "html[data-motion]"
+      ]
+    },
+    {
+      "check": "focus-visible",
+      "where": "input#vt",
+      "msg": "Tab stop 7, input \"\": its focus change is faint: 1.15:1 against the ground, 3:1 needed",
+      "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "focus-visible"
+      ],
+      "wheres": [
+        "input#vt"
+      ]
+    },
+    {
+      "check": "moment-none",
+      "where": "(the page)",
+      "msg": "a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+      "fix": "deal one (moments.mjs pick --page software) and mount it in its own section",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "moment-none"
+      ],
+      "wheres": [
+        "(the page)"
+      ]
+    },
+    {
+      "check": "hero-screen",
+      "where": "main#conteudo > section.hero.wrap \"Simulador CLT Calculadora de salário par\"",
+      "msg": "the hero ends at 540px on a 900px screen, 360px above the fold: it ends at the fold, 1px either way (SR-1)",
+      "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "hero-screen"
+      ],
+      "wheres": [
+        "main#conteudo > section.hero.wrap \"Simulador CLT Calculadora de salário par\""
+      ]
+    },
+    {
+      "check": "hero-screen",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido Dados do mê\"",
+      "msg": "360px of the next section shows on the first screen (from 540px on a 900px screen): nothing below the hero shows at load (SR-1)",
+      "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "hero-screen"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.grid \"Simulador de salário líquido Dados do mê\""
+      ]
+    },
+    {
+      "check": "section-height",
+      "where": "footer.site-footer \"Feito por Leonardo Carrilho · HTML, CSS \"",
+      "msg": "the section is 80px tall (0.1 screens), 820px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-height"
+      ],
+      "wheres": [
+        "footer.site-footer \"Feito por Leonardo Carrilho · HTML, CSS \""
+      ]
+    },
+    {
+      "check": "section-height",
+      "where": "main#conteudo > section.wrap.history-section \"Últimas simulações Ficam salvas apenas n\"",
+      "msg": "the section is 268px tall (0.3 screens), 632px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-height"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.history-section \"Últimas simulações Ficam salvas apenas n\"",
+        "main#conteudo > section.wrap.extras \"Outros direitos O 13º e as férias têm tr\"",
+        "main#conteudo > section.wrap.grid \"Simulador de salário líquido Dados do mê\""
+      ]
+    },
+    {
+      "check": "section-height",
+      "where": "section#como-funciona \"Como o cálculo funciona INSS progressivo\"",
+      "msg": "the section is 272px tall (0.3 screens), 628px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 2 more like it: \"Outros direitos O 13º e \", \"Simulador de salário líq\") (SR-2)",
+      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-height",
+        "screen-short",
+        "screen-height"
+      ],
+      "wheres": [
+        "section#como-funciona \"Como o cálculo funciona INSS progressivo\"",
+        "#como-funciona section.wrap.about \"Como o cálculo funciona INSS pro\""
+      ]
+    },
+    {
+      "check": "section-air",
+      "where": "main#conteudo > section.wrap.extras > div.section-head \"Outros direitos O 13º e as férias têm tr\"",
+      "msg": "a bottom border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+      "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-air"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.extras > div.section-head \"Outros direitos O 13º e as férias têm tr\""
+      ]
+    },
+    {
+      "check": "section-air",
+      "where": "main#conteudo > section.wrap.history-section > div.section-head.inline \"Últimas simulações Ficam salvas apenas n\"",
+      "msg": "a bottom border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+      "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-air"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.history-section > div.section-head.inline \"Últimas simulações Ficam salvas apenas n\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido Dados do mê\"",
+      "msg": "the screen at scroll 900px (stride 1) shows 433px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.grid \"Simulador de salário líquido Dados do mê\"",
+        "main#conteudo > section.wrap.history-section > div.card.history-card \"Nenhuma simulação salva ainda. Calcule u\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "h2#titulo-historico \"Últimas simulações\"",
+      "msg": "the screen at scroll 1333px (the top of section 3) shows 268px of section 4 and the heading of section 4 whole and the content of 3 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "h2#titulo-historico \"Últimas simulações\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "h2#titulo-extras \"Outros direitos\"",
+      "msg": "the screen at scroll 540px (the top of section 2) shows 107px of section 3 and the heading of section 3 whole and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (and 2 more like it: scroll 89px, scroll 0px) (SR-4)",
+      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "h2#titulo-extras \"Outros direitos\""
+      ]
+    },
+    {
+      "check": "one-heading",
+      "where": "h2#titulo-extras \"Outros direitos\"",
+      "msg": "headings of two sections show whole on one screen at 16 of 33 scroll positions (48.5%; at scroll 550, 600, 650, 700px), here with \"R$ 3.127,75\": at most 3% on a desktop (SR-5)",
+      "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-heading"
+      ],
+      "wheres": [
+        "h2#titulo-extras \"Outros direitos\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "a.skip-link \"Pular para o conteúdo\"",
+      "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "a.skip-link \"Pular para o conteúdo\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "header.site-header \"R$ Calculadora trabalhista salário líqui\"",
+      "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "header.site-header \"R$ Calculadora trabalhista salário líqui\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "footer.site-footer \"Feito por Leonardo Carrilho · HTML, CSS \"",
+      "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 6 more like it: p#anuncio, \"Simulador CLT Calculador\", \"Simulador de salário líq\") (SR-6)",
+      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "footer.site-footer \"Feito por Leonardo Carrilho · HTML, CSS \""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "p#historico-vazio \"Nenhuma simulação salva ainda. Calcule u\"",
+      "msg": "1 text block starts on a left line at x 519, 439px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
+      "fix": "start the text on the container's left, or on the one split line every split shares",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "p#historico-vazio \"Nenhuma simulação salva ainda. Calcule u\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "main#conteudo > section.wrap.grid > div.results > details.card.memory \"MEMÓRIA DE CÁLCULO DO INSS\"",
+      "msg": "its last line sits 0px above the lower edge of section.wrap.grid, where the ground changes to section.wrap.extras",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.grid > div.results > details.card.memory \"MEMÓRIA DE CÁLCULO DO INSS\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "form#form-ferias \"Férias Salário bruto R$ Dias vendidos Fé\"",
+      "msg": "its last line sits 0px above the lower edge of section.wrap.extras, where the ground changes to section.wrap.history-section",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "form#form-ferias \"Férias Salário bruto R$ Dias vendidos Fé\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "section#como-funciona > div.about-grid > article:nth-of-type(4) > p \"As faixas usadas são as de 2025. Confira\"",
+      "msg": "its last line sits 3px above the rule on top of the footer",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "section#como-funciona > div.about-grid > article:nth-of-type(4) > p \"As faixas usadas são as de 2025. Confira\""
+      ]
+    },
+    {
+      "check": "no-visual",
+      "where": "main#conteudo > section.wrap.history-section \"Últimas simulações\"",
+      "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+      "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "no-visual"
+      ],
+      "wheres": [
+        "main#conteudo > section.wrap.history-section \"Últimas simulações\""
+      ]
+    },
+    {
+      "check": "heading-scale",
+      "where": "p#res-liquido \"R$ 3.127,75\"",
+      "msg": "the figure \"R$ 3.127,75\" is set at 40px, larger than the h1 (36px)",
+      "fix": "set figures below the h1: a stat reads as data, not as the headline",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "heading-scale"
+      ],
+      "wheres": [
+        "p#res-liquido \"R$ 3.127,75\""
+      ]
+    },
+    {
+      "check": "off-grid",
+      "where": "section.hero.wrap > ul.hero-facts > li:nth-of-type(1) > strong \"INSS progressivo\"",
+      "msg": "left edge at 33px, 17px off the page margin at 16px (26 elements, like p.hero-lead); 3 more in this section off the grid too (span at 33px, strong at 33px, span at 33px)",
+      "fix": "move it onto the page margin, or the column edge its section uses",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "off-grid"
+      ],
+      "wheres": [
+        "section.hero.wrap > ul.hero-facts > li:nth-of-type(1) > strong \"INSS progressivo\""
+      ]
+    },
+    {
+      "check": "off-grid",
+      "where": "footer.site-footer > div.wrap.footer-inner > p.muted \"Valores aproximados, sem arredondamentos\"",
+      "msg": "left edge at 20px, 4px off the page margin at 16px (26 elements, like p:nth-of-type(1))",
+      "fix": "move it onto the page margin, or the column edge its section uses",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "off-grid"
+      ],
+      "wheres": [
+        "footer.site-footer > div.wrap.footer-inner > p.muted \"Valores aproximados, sem arredondamentos\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "section.hero.wrap ul.hero-facts \"INSS progressivo4 faixas, com te\"",
+      "msg": "starts at x 853.3; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "section.hero.wrap ul.hero-facts \"INSS progressivo4 faixas, com te\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "section.wrap.grid div.results \"Seu líquido no mês IRRF pelo des\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "section.wrap.grid div.results \"Seu líquido no mês IRRF pelo des\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "section.wrap.grid section.card.result-card \"Seu líquido no mês IRRF pelo des\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "section.wrap.grid section.card.result-card \"Seu líquido no mês IRRF pelo des\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "section.wrap.grid details.card.memory \"Memória de cálculo do INSS Faixa\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "section.wrap.grid details.card.memory \"Memória de cálculo do INSS Faixa\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "#como-funciona h3 \"IRRF por faixa\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "#como-funciona h3 \"IRRF por faixa\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "#como-funciona p \"O imposto é calculado sobre o sa\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "#como-funciona p \"O imposto é calculado sobre o sa\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "#como-funciona h3 \"Tabelas de referência\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "#como-funciona h3 \"Tabelas de referência\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "#como-funciona p \"As faixas usadas são as de 2025.\"",
+      "msg": "starts at x 736; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "#como-funciona p \"As faixas usadas são as de 2025.\""
+      ]
+    },
+    {
+      "check": "edge-left",
+      "where": "footer.site-footer p.muted \"Valores aproximados, sem arredon\"",
+      "msg": "starts at x 986.2; the lines are 80 and the column starts",
+      "fix": "start it on the .wrap left line",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "edge-left"
+      ],
+      "wheres": [
+        "footer.site-footer p.muted \"Valores aproximados, sem arredon\""
+      ]
+    },
+    {
+      "check": "screen-short",
+      "where": "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\"",
+      "msg": "451px tall; one screen under the nav is 900px",
+      "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-short"
+      ],
+      "wheres": [
+        "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\""
+      ]
+    },
+    {
+      "check": "neighbour",
+      "where": "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\"",
+      "msg": "framed, 348px of section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\" shows",
+      "fix": "keep the next section's heading and picture out of this screen",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "neighbour"
+      ],
+      "wheres": [
+        "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\""
+      ]
+    },
+    {
+      "check": "screen-short",
+      "where": "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\"",
+      "msg": "793px tall; one screen under the nav is 900px",
+      "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-short"
+      ],
+      "wheres": [
+        "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\""
+      ]
+    },
+    {
+      "check": "screen-height",
+      "where": "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\"",
+      "msg": "793px, 0.88 screens; a section is exactly one or two (--h)",
+      "fix": "make the section exactly one or two screens (--h: 1 or 2)",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-height"
+      ],
+      "wheres": [
+        "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\""
+      ]
+    },
+    {
+      "check": "neighbour",
+      "where": "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\"",
+      "msg": "framed, 35px of section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\" shows",
+      "fix": "keep the next section's heading and picture out of this screen",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "neighbour"
+      ],
+      "wheres": [
+        "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\""
+      ]
+    },
+    {
+      "check": "screen-short",
+      "where": "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\"",
+      "msg": "519px tall; one screen under the nav is 900px",
+      "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-short"
+      ],
+      "wheres": [
+        "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\""
+      ]
+    },
+    {
+      "check": "screen-height",
+      "where": "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\"",
+      "msg": "519px, 0.58 screens; a section is exactly one or two (--h)",
+      "fix": "make the section exactly one or two screens (--h: 1 or 2)",
+      "widths": [
+        1440
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-height"
+      ],
+      "wheres": [
+        "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\""
+      ]
+    },
+    {
+      "check": "neighbour",
+      "where": "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\"",
+      "msg": "framed, 116px of section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\" shows",
+      "fix": "keep the next section's heading and picture out of this screen",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "neighbour"
+      ],
+      "wheres": [
+        "section.wrap.extras section.wrap.extras \"Outros direitos O 13º e as féria\""
+      ]
+    },
+    {
+      "check": "screen-short",
+      "where": "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \"",
+      "msg": "268px tall; one screen under the nav is 900px",
+      "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-short"
+      ],
+      "wheres": [
+        "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \""
+      ]
+    },
+    {
+      "check": "screen-height",
+      "where": "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \"",
+      "msg": "268px, 0.30 screens; a section is exactly one or two (--h)",
+      "fix": "make the section exactly one or two screens (--h: 1 or 2)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "screen-height"
+      ],
+      "wheres": [
+        "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \""
+      ]
+    },
+    {
+      "check": "neighbour",
+      "where": "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \"",
+      "msg": "framed, 50px of #como-funciona section.wrap.about \"Como o cálculo funciona INSS pro\" shows",
+      "fix": "keep the next section's heading and picture out of this screen",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "neighbour"
+      ],
+      "wheres": [
+        "section.wrap.history-section section.wrap.history-section \"Últimas simulações Ficam salvas \""
+      ]
+    },
+    {
+      "check": "neighbour",
+      "where": "#como-funciona section.wrap.about \"Como o cálculo funciona INSS pro\"",
+      "msg": "framed, 80px of the footer shows",
+      "fix": "keep the next section's heading and picture out of this screen",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "neighbour"
+      ],
+      "wheres": [
+        "#como-funciona section.wrap.about \"Como o cálculo funciona INSS pro\""
+      ]
+    },
+    {
+      "check": "hero-fold",
+      "where": "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\"",
+      "msg": "starts at y 89, not under the nav",
+      "fix": "the hero fills the first screen alone, its button inside it",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "hero-fold"
+      ],
+      "wheres": [
+        "section.hero.wrap section.hero.wrap \"Simulador CLT Calculadora de sal\""
+      ]
+    },
+    {
+      "check": "hero-fold",
+      "where": "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\"",
+      "msg": "shows on the first screen from y 552",
+      "fix": "the hero fills the first screen alone, its button inside it",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "hero-fold"
+      ],
+      "wheres": [
+        "section.wrap.grid section.wrap.grid \"Simulador de salário líquido Dad\""
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "check": "nav",
+      "where": "header.site-header > div.wrap.header-inner > a.brand \"R$ Calculadora trabalhista SALÁRIO LÍQUI\"",
+      "msg": "the nav is lopsided: its first item starts 11px inside the content's edge (80px), while its last ends on the other edge",
+      "fix": "start the nav's first item and end its last on the content's two edges",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "fold-card",
+      "where": "form#form-folha \"Dados do mês Valores em reais. O cálculo\"",
+      "msg": "the 624x679 card starts on the first screen and runs 331px past its bottom",
+      "fix": "end the card inside the first screen, or start it lower, so its whole edge shows",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "fold-card",
+      "where": "main#conteudo > section.wrap.grid > div.results > section.card.result-card \"Seu líquido no mês IRRF pelo desconto si\"",
+      "msg": "the 624x652 card starts on the first screen and runs 304px past its bottom (inside a held section or scroll scene, whose motion --quick does not check)",
+      "fix": "end the card inside the first screen, or start it lower, so its whole edge shows",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "copy-buttons",
+      "where": "button#btn-limpar \"Limpar\"",
+      "msg": "\"Limpar\" does not start with a verb (book, buy, try, start, get, see...) (and 3 more like it: \"Copiar resumo\", \"Imprimir\", \"Limpar histórico\")",
+      "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "copy-actions",
+      "where": "(the page)",
+      "msg": "the main action \"Calcular\" does not read word for word the same in the nav or hero and the closing section",
+      "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "copy-length",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido\"",
+      "msg": "2 sections over 90 words a screen outside the UI mocks (\"Simulador de salário líq\" 159, \"Como o cálculo funciona\" 113); 83 words a screen across the page (413 words in 5 screens): a tech page says it in about 80 or fewer",
+      "fix": "cut every section to its heading, one line and the product UI: the UI says the rest; no second paragraph, no list of feature sentences",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "one-screen",
+      "where": "main#conteudo > section.wrap.grid \"Simulador de salário líquido\"",
+      "msg": "2 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Simulador de salário líquido\" is 793px of the 900px under the nav, and \"Outros direitos\" shows below it (\"Outros direitos\")",
+      "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "skip-link",
+      "where": "a.skip-link \"Pular para o conteúdo\"",
+      "msg": "the first Tab stop is \"Pular para o conteúdo\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+      "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "share-meta",
+      "where": "head",
+      "msg": "the head lacks og:description, og:image, twitter:card: a shared link shows no picture or title of its own",
+      "fix": "copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "form-fields",
+      "where": "form#form-folha",
+      "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+      "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "form-fields",
+      "where": "form#form-decimo",
+      "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+      "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "form-fields",
+      "where": "form#form-ferias",
+      "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+      "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "section-air",
+      "where": "main#conteudo > section.wrap.extras / main#conteudo > section.wrap.history-section",
+      "msg": "94px of air between the content of these two sections: 128-480px (64-600px WARN) (every gap out of the band at 1440px, top to bottom: 107px after \"Simulador de salário\", 94px after \"Outros direitos O 13\", 99px after \"Últimas simulações F\") (SR-3)",
+      "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "section-air",
+      "where": "main#conteudo > section.wrap.history-section / section#como-funciona",
+      "msg": "99px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+      "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "section-air",
+      "where": "main#conteudo > section.wrap.grid / main#conteudo > section.wrap.extras",
+      "msg": "107px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+      "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+      "widths": [
+        1440
+      ],
+      "from": "consistency"
+    },
+    {
+      "check": "fold-cut",
+      "where": "section.hero.wrap > ul.hero-facts > li:nth-of-type(3) > span \"COM TERÇO E ABONO\"",
+      "msg": "a line of the hero text is sliced by the bottom of the first screen",
+      "fix": "size the hero so the heading ends above the fold, or starts below it",
+      "widths": [
+        320
+      ],
+      "from": "consistency"
+    }
+  ]
+}
