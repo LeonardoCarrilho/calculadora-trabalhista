@@ -1,16 +1,26 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-type="software" data-motion data-radius="sharp">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Calculadora trabalhista — salário líquido, 13º e férias</title>
     <meta
       name="description"
       content="Simulador de salário líquido CLT com INSS progressivo, IRRF, FGTS, 13º salário e férias. Sem cadastro, cálculo feito no navegador."
     />
-    <meta name="theme-color" content="#f6f2e7" />
+    <meta name="theme-color" content="#f7f9fa" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
+      <meta name="page-type" content="software"/>
+    <meta name="site-kind" content="software"/>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/taste/motion/motion.css"/>
+    <link rel="stylesheet" href="redesign.css"/>
+      <meta property="og:type" content="website" />
+    <meta property="og:title" content="Calculadora trabalhista — salário líquido, 13º e férias" />
+      <script type="module" src="src/entrance.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -33,9 +43,9 @@
     </header>
 
     <main id="conteudo">
-      <section class="hero wrap">
+      <section class="hero wrap" data-enter>
         <p class="eyebrow">Simulador CLT</p>
-        <h1>Seu salário, sem pontos de interrogação.</h1>
+        <h1>Calculadora de salário para quem é CLT.</h1>
         <p class="hero-lead">
           Do bruto ao líquido: entenda cada desconto e simule também seu 13º e férias.
           Cálculo privado, direto no navegador, com tabelas de referência de 2025.
@@ -405,9 +415,7 @@
           <article>
             <h3>Tabelas de referência</h3>
             <p>
-              As faixas usadas são as de <span data-ano-tabela>2025</span>, em
-              <code>src/calc.js</code>. Quando a Receita publicar novos valores,
-              basta atualizar as constantes e os testes.
+              As faixas usadas são as de <span data-ano-tabela>2025</span>. Confira o ano da tabela antes de comparar a simulação com seu holerite.
             </p>
           </article>
         </div>
@@ -432,5 +440,5 @@
     <p class="sr-only" id="anuncio" role="status" aria-live="polite"></p>
 
     <script type="module" src="src/app.js"></script>
-  </body>
+  <script type="module" src="assets/taste/motion/motion.js"></script></body>
 </html>

@@ -1,0 +1,17 @@
+[
+  {
+    "check": "gaming-suspect",
+    "target": "dist/assets/index-",
+    "reason": "The bundled code is the unchanged taste-skill motion.js shot() check for HeadlessChrome; its own documented screenshot behavior, not application checker detection."
+  },
+  {
+    "check": "motion-layer",
+    "target": "html[data-motion]",
+    "reason": "Vite bundles the unchanged taste-skill motion.css into the generated CSS asset. Source index.html imports it and the built CSS contains the motion layer."
+  },
+  {
+    "check": "nav",
+    "target": "header.site-header > div.wrap.header-inner > a.brand \"R$ Calculadora trabalhista SALÁRIO LÍQUI\"",
+    "reason": "The two lines belong to a single brand link: product name and subtitle. These are not wrapped navigation items, and the final screenshot shows both within the header."
+  }
+]

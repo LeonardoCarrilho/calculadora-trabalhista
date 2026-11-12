@@ -1,3 +1,4 @@
+import "./observability.js";
 import {
   TABELA_REFERENCIA,
   calcularDecimoTerceiro,
