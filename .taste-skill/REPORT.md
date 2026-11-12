@@ -16,9 +16,9 @@ A composição preserva a ferramenta operacional, os campos e os resultados reai
 
 ## Gate e limites
 
-Todos os 63 FAILs abertos, 16 WARNs e suas localizações estão no [registro integral](findings.json). A validação não é PASS. As exigências de seções fullscreen, CTA promocional por seção, fotografia/mockup e momentos de demonstração são incompatíveis com a manutenção destas ferramentas. Elas continuam abertas, sem isenções genéricas. Alinhamentos sinalizados em painéis, subtítulos e tabelas foram confrontados com as capturas.
+O [registro integral](findings.json) contém 63 achados FAIL antes das isenções: 3 receberam isenções específicas e 60 permanecem efetivamente abertos, conforme a linha GATE acima. Também registra 16 WARNs e suas localizações. O campo histórico openFails do JSON inclui os achados isentados; a contagem efetiva é a da linha GATE. A validação não é PASS. As exigências de seções fullscreen, CTA promocional por seção, fotografia/mockup e momentos de demonstração são incompatíveis com a manutenção destas ferramentas. Elas continuam abertas, sem isenções genéricas. Alinhamentos sinalizados em painéis, subtítulos e tabelas foram confrontados com as capturas.
 
-Achados finais de foco, contraste, toque, colisão, overflow de página e entrada: [{"check":"focus-visible","where":"input#vt","msg":"Tab stop 7, input \"\": its focus change is faint: 1.15:1 against the ground, 3:1 needed"}].
+Achados finais de foco, contraste, toque, colisão, overflow de página e entrada: permanece um FAIL automático de focus-visible em input#vt. A verificação específica abaixo confirmou o indicador visível do wrapper com contraste de 4,785:1; esta conclusão posterior não altera OPEN 60 nem acrescenta uma isenção ao gate. Nenhum outro FAIL dessas classes foi registrado.
 
 Os WARNs de copy permanecem no registro: rótulos curtos de ações existentes e títulos informativos em português não foram convertidos em copy de venda. Não foram executados novos perfis de performance. Estados de erro, vazio, armazenamento e ações têm testes, mas não possuem captura anterior comparável.
 
